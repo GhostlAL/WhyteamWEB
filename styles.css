@@ -277,7 +277,6 @@ section {
   box-shadow: 0 0 10px #6f00ff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #e600ffcc;
