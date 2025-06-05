@@ -39,7 +39,7 @@
         <img src="img/lyg-profile.png" alt="Foto de perfil de zlyg, desarrollador principal">
         <h3>zlyg</h3>
         <p>Desarrollador principal</p>
-        <button class="btn-neon" onclick="window.location.href='https:/'">Redes Sociales</button>
+        <button class="btn-neon" onclick="window.location.href='https://'">Redes Sociales</button>
       </div>
       <div class="miembro">
         <img src="img/slime-profile.png" alt="Foto de perfil de slimetvnyt, diseñador de logos / constructor">
@@ -76,22 +76,67 @@
       </div>
     </div>
   </section>
-<section id="contacto" class="intro redes-sociales">
-  <h2>Contacto</h2>
-  <p>Puedes contactarnos a través de nuestro Discord o redes sociales oficiales.</p>
-  <div class="iconos-redes">
-    <a href="https://discord.gg/tXqzShnVHx" target="_blank" aria-label="Discord" rel="noopener">
-      <img src="assets/icons/discord.svg" alt="Discord" />
-      <span>Discord</span>
-    </a>
-    <a href="https://x.com/WhyTeamStudios" target="_blank" aria-label="X / Twitter" rel="noopener">
-      <img src="assets/icons/x.svg" alt="X / Twitter" />
-      <span>@WhyTeamStudios</span>
-    </a>
-  </div>
-</section>
+
+  <section class="suggestions">
+    <h2>Envíanos tus Sugerencias</h2>
+    <form id="suggestionForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="suggestion">Sugerencia:</label>
+      <textarea id="suggestion" name="suggestion" required></textarea>
+
+      <button type="submit">Enviar Sugerencia</button>
+    </form>
+  </section>
+
+  <section id="contacto" class="intro redes-sociales">
+    <h2>Contacto</h2>
+    <p>Puedes contactarnos a través de nuestro Discord o redes sociales oficiales.</p>
+    <div class="iconos-redes">
+      <a href="https://discord.gg/tXqzShnVHx" target="_blank" aria-label="Discord" rel="noopener">
+        <img src="assets/icons/discord.svg" alt="Discord" />
+        <span>Discord</span>
+      </a>
+      <a href="https://x.com/WhyTeamStudios" target="_blank" aria-label="X / Twitter" rel="noopener">
+        <img src="assets/icons/x.svg" alt="X / Twitter" />
+        <span>@WhyTeamStudios</span>
+      </a>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 WhyTeam. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const suggestion = document.getElementById('suggestion').value;
+
+      const webhookUrl = 'https://discord.com/api/webhooks/1380296289610236014/8vAfgQe1xpCFZIhln2YrX5j6vFLZwJLJ1NUhaNPzL0UWDN13xATcJUZUfS_NuIHldqne'; // Reemplaza con la URL de tu webhook
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          content: `**Nueva Sugerencia de ${name}:**\n\n${suggestion}`
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Sugerencia enviada con éxito!');
+        document.getElementById('suggestionForm').reset();
+      })
+      .catch(error => {
+        console.error('Error al enviar la sugerencia:', error);
+        alert('Hubo un error al enviar la sugerencia. Por favor, inténtalo de nuevo.');
+      });
+    });
+  </script>
 </body>
 </html>
