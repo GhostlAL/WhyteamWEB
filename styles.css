@@ -1,0 +1,372 @@
+/* Fondo y fuente */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0ff;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1a001a 0%, #000000 100%);
+  z-index: -1;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #0a000d;
+  color: white;
+  box-shadow: 0 0 5px #6b008f;
+  border-bottom: 2px solid #9700c9;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #c800ff;
+  text-shadow:
+    0 0 8px #6b008f,
+    0 0 12px #bfbfbf,
+    0 0 26px #1a001a;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+  color: #dddddd;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: text-shadow 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #c800ff;
+  text-shadow: 0 0 5px #c800ff;
+}
+
+/* Secciones */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.intro h2,
+.equipo h2,
+#contacto h2 {
+  color: #ff80ff;
+  font-size: 2rem;
+  border-bottom: 2px solid #6f00ff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p,
+#contacto p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.miembro {
+  background-color: #1a001a;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px #9b00ff80;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miembro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #e600ffcc;
+}
+
+.miembro img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #9b00ff;
+  box-shadow: 0 0 10px #6f00ff;
+  margin-bottom: 1rem;
+}
+
+.miembro h3 {
+  color: #ffb3ff;
+  margin-bottom: 0.3rem;
+}
+
+.miembro p {
+  color: #d1b3ff;
+  font-size: 0.9rem;
+}
+
+.btn-neon {
+  background-color: #3a0057;
+  color: #d8b3ff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow:
+    0 0 4px #6b008f,
+    0 0 8px #6b008f,
+    0 0 12px #6b008f;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-neon:hover {
+  box-shadow:
+    0 0 6px #9400d3,
+    0 0 12px #9400d3,
+    0 0 18px #9400d3,
+    0 0 24px #9400d3;
+  color: #fff;
+}
+
+.img-neon {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  border: 4px solid #3a0057;
+  box-shadow:
+    0 0 8px #6b008f,
+    0 0 15px #9400d3,
+    0 0 20px #d79aff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.img-neon:hover {
+  box-shadow:
+    0 0 12px #6b008f,
+    0 0 25px #9400d3,
+    0 0 35px #d79aff;
+}
+
+.redes-sociales {
+  background: #180216;
+  color: #e0e0e0;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.redes-sociales h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.redes-sociales p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #ada8ad;
+}
+
+.iconos-redes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.iconos-redes a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 80px;
+  font-weight: 600;
+}
+
+.iconos-redes a:hover,
+.iconos-redes a:focus {
+  color: #ff79c6;
+  transform: scale(1.1);
+}
+
+.iconos-redes img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 2px rgba(255, 0, 242, 0.4));
+}
+
+.miembro img[alt="Nuevo miembro"] {
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+}
+
+.miembro img[alt="Nuevo miembro"]:before {
+  content: '?';
+}
+
+/* Estilos específicos para la página de proyectos */
+.project h2 {
+  color: #ff80ff;
+  font-size: 2.5rem;
+  border-bottom: 2px solid #6f00ff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-shadow:
+    0 0 10px #ff80ff,
+    0 0 20px #ff80ff,
+    0 0 30px #ff80ff;
+  font-weight: 700;
+}
+
+.project p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border: 3px solid #9b00ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #6f00ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #e600ffcc;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.video iframe {
+  border: 3px solid #9b00ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #6f00ff;
+}
+
+.video iframe:hover {
+  box-shadow: 0 0 20px #e600ffcc;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0d001a;
+  color: #bfbfbf;
+  border-top: 1px solid #330033;
+  font-size: 0.9rem;
+}
+
+/* Media Queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .project h2 {
+    font-size: 2rem;
+  }
+
+  .project p {
+    font-size: 0.9rem;
+  }
+
+  .gallery img {
+    max-width: 100%;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  .project h2 {
+    font-size: 1.5rem;
+  }
+
+  .project p {
+    font-size: 0.8rem;
+  }
+
+  .gallery img {
+    max-width: 100%;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: auto;
+  }
+}
